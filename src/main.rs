@@ -1,4 +1,5 @@
 use std::io;
+use std::env;
 
 struct MeanFeatures {
     wordlen: i32,	// The length of each of these
@@ -25,5 +26,5 @@ struct FreqFeatures {
 }
 
 fn main() {
-    unimplemented!();
+    let args: Vec<String> = env::args().collect();
 }
