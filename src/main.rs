@@ -8,10 +8,10 @@ use std::default::Default;
 
 mod tokenizer;      // Tokenizes files and calculates means.
 
-#[derive(Default)]
+#[derive(Default, Copy, Clone)]
 struct Metadata {
     wordlen: f32,	// The length of each of these characteristics will be
-    sentlen: i32,	// averaged and compared with other source.
+    sentlen: f32,	// averaged and compared with other source.
     paralen: i32,	// Removing this for now.
     comma: i32,
     semicolon: i32,
@@ -31,6 +31,7 @@ struct Metadata {
 }
 
 fn main() {
+    
     let mut off = Metadata {..Default::default()};
     let mut pseu = Metadata {..Default::default()};
 
@@ -49,17 +50,12 @@ fn main() {
 
     match file1.read_to_string(&mut s1) {
         Err(why) => panic!("Couldn't read file1: {}", Error::description(&why)),
-        Ok(_) => println!("{}", s1),
+        Ok(_) => println!("File 1 read."),
     };
     
     match file2.read_to_string(&mut s2) {
         Err(why) => panic!("Couldn't read file2: {}", Error::description(&why)),
-        Ok(_) => println!("{}", s2),
+        Ok(_) => println!("File 2 read."),
     };
-
-    off.wordlen = tokenizer::word_token(s1);
-    pseu.wordlen = tokenizer::word_token(s2);
-    println!("Mean word length for file 1: {}", off.wordlen);
-    println!("Mean word length for file 2: {}", pseu.wordlen);
 
 }

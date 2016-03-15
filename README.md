@@ -11,18 +11,18 @@ According to [Brennan et al.](https://www.cs.drexel.edu/~sa499/papers/adversaria
 With the proliferation and permanence of online media, there is an increasing possibility of the opinions of one's pseudonym to be linked to a more 'official' presence, if their linguistic styles are similar. The purpose of this tool, at least initially, is to compare the similarities between text from an 'official' source and text that will be shared under a pseudonym. Features will be added/removed/modified in the future.
 
 ## Metadata Analyzed
-Length
+Length:
 + Words
 + Sentences
 + Paragraphs
 
-Frequency of Punctuation
+Frequency of Punctuation:
 + Commas
 + Semicolons
 + Exclamation marks
 + Hyphens
 
-Frequency of Function Words
+Frequency of Function Words:
 + *and*
 + *but*
 + *however*

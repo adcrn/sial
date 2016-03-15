@@ -1,30 +1,26 @@
-pub fn word_token(s: String) -> f32 {
+pub fn word_token(s: &String) -> Vec<&str> {
+    
     let separators: &[char] = &[' ', '.', ','];
-    let words = s.split(separators);
+    
+    let words: Vec<&str> = s.split(separators).collect();
 
-    let (mut word_length_total, mut word_total) = (0, 0);
-    for w in words {
-    	word_length_total += w.len();
-    	word_total += 1;
-    }
-
-    let mean_word_length = (word_length_total / word_total) as f32;
-
-    return mean_word_length;
+    return words;
 }
 
-pub fn sentence_token(s: String) -> f32 {
+pub fn sent_token(s: &String) -> Vec<&str> {
+	
 	let separators: &[char] = &['.', '!', '?'];
-	let sentences = s.split(separators);
+	
+	let sentences: Vec<&str> = s.split(separators).collect();
 
-	let (mut sentence_length_total, mut sentence_total) = (0,0);
+	return sentences;
+}
 
-	for s in sentences {
-		sentence_length_total += s.len();
-		sentence_total +=1;
-	}
+pub fn para_token(s: &String) -> Vec<&str> {
+	
+	let separators: &[char] = &['\n'];
 
-	let mean_sentence_length = (sentence_length_total / sentence_total) as f32;
+	let paragraphs: Vec<&str> = s.split(separators).collect();
 
-	return mean_sentence_length;
+	return paragraphs;
 }
