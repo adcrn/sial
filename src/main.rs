@@ -6,13 +6,13 @@ use std::fs::File;
 use std::error::Error;
 use std::default::Default;
 
-mod tokenizer;      // Tokenizes files and calculates means.
+mod tokenizer;      // Tokenizes files into words, sentences, and paragraphs.
 
 #[derive(Default, Copy, Clone)]
 struct Metadata {
     wordlen: f32,	// The length of each of these characteristics will be
     sentlen: f32,	// averaged and compared with other source.
-    paralen: i32,	// Removing this for now.
+    paralen: i32,
     comma: i32,
     semicolon: i32,
     quote: i32,
