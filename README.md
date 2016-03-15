@@ -34,7 +34,7 @@ Frequency of Function Words
 + *this*
 + *very*
 
-Much of the tests are referenced from [Ramyaa and Rasheed](http://www2.tcs.ifi.lmu.de/~ramyaa/publications/stylometry.pdf).
+All of these tests are referenced from [Ramyaa and Rasheed](http://www2.tcs.ifi.lmu.de/~ramyaa/publications/stylometry.pdf).
 
 ## TODO
 + Given a body of work, output similarity score to pseudonymous communication

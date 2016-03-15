@@ -4,14 +4,15 @@ use std::io::prelude::*;
 use std::env;
 use std::fs::File;
 use std::error::Error;
+use std::default::Default;
 
-struct MeanFeatures {
-    wordlen: i32,	// The length of each of these characteristics will be
+mod tokenizer;      // Tokenizes files and calculates means.
+
+#[derive(Default)]
+struct Metadata {
+    wordlen: f32,	// The length of each of these characteristics will be
     sentlen: i32,	// averaged and compared with other source.
-    //paralen: i32,	// Removing this for now.
-}
-
-struct FreqFeatures {
+    paralen: i32,	// Removing this for now.
     comma: i32,
     semicolon: i32,
     quote: i32,
@@ -30,6 +31,9 @@ struct FreqFeatures {
 }
 
 fn main() {
+    let mut off = Metadata {..Default::default()};
+    let mut pseu = Metadata {..Default::default()};
+
     let args: Vec<String> = env::args().collect();
     
     let mut file1 = match File::open(&args[1]) {
@@ -52,4 +56,10 @@ fn main() {
         Err(why) => panic!("Couldn't read file2: {}", Error::description(&why)),
         Ok(_) => println!("{}", s2),
     };
+
+    off.wordlen = tokenizer::word_token(s1);
+    pseu.wordlen = tokenizer::word_token(s2);
+    println!("Mean word length for file 1: {}", off.wordlen);
+    println!("Mean word length for file 2: {}", pseu.wordlen);
+
 }
