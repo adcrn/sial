@@ -7,11 +7,13 @@ use std::error::Error;
 use std::default::Default;
 
 mod tokenizer;      // Tokenizes files into words, sentences, and paragraphs.
+mod calculator;     // Does all the 
 
 #[derive(Default, Copy, Clone)]
 struct Metadata {
-    wordlen: f32,	// The length of each of these characteristics will be
-    sentlen: f32,	// averaged and compared with other source.
+    word_total: f32,    // Intermediary for calculator.
+    wordlen: f32,
+    sentlen: f32,
     paralen: i32,
     comma: i32,
     semicolon: i32,
@@ -57,5 +59,19 @@ fn main() {
         Err(why) => panic!("Couldn't read file2: {}", Error::description(&why)),
         Ok(_) => println!("File 2 read."),
     };
+
+    let s1_token: Vec<&str> = tokenizer::word_token(&s1);
+    let s2_token: Vec<&str> = tokenizer::word_token(&s2);
+    let (off.word_total, off.wordlen) = calculator::word_mean(&s1_token);
+    let (pseu.word_total, pseu.wordlen) = calculator::word_mean(&s2_token);
+    println!("Mean word length for file1: {}", off.wordlen);
+    println!("Mean word length for file2: {}", pseu.wordlen);
+
+    let s1_sent: Vec<&str> = tokenizer::sent_token(&s1);
+    let s2_sent: Vec<&str> = tokenizer::sent_token(&s2);
+    off.sentlen = calculator::sent_mean(&off.word_total, &s1_sent);
+    pseu.sentlen = calculator::sent_mean(&pseu.word_total, &s2_sent);
+    println!("Mean sentence length #1: {}", off.sentlen);
+    println!("Mean sentence length #2: {}", pseu.sentlen);
 
 }
