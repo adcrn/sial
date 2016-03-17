@@ -5,6 +5,7 @@ use std::env;
 use std::fs::File;
 use std::error::Error;
 use std::default::Default;
+use std::char;
 
 mod tokenizer;      // Tokenizes files into words, sentences, and paragraphs.
 mod calculator;     // Does all the 

@@ -1,3 +1,6 @@
+use std::char;
+use std::iter;
+
 pub fn word_token(s: &String) -> Vec<&str> {
     
     let separators: &[char] = &[' ', '.', ','];
@@ -23,4 +26,12 @@ pub fn para_token(s: &String) -> Vec<&str> {
 	let paragraphs: Vec<&str> = s.split(separators).collect();
 
 	return paragraphs;
+}
+
+// Needs some thought.
+pub fn punctuation(s: &String) -> Vec<&str> {
+
+	let punctuation: Vec<&str> = s.split(s.!is_alphanumeric()).collect();
+
+	return punctuation;
 }

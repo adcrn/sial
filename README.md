@@ -38,4 +38,3 @@ All of these tests are referenced from [Ramyaa and Rasheed](http://www2.tcs.ifi.
 
 ## TODO
 + Given a body of work, output similarity score to pseudonymous communication
-+ Given a handle, output possibility of same person across supported sites
