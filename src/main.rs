@@ -62,10 +62,12 @@ fn main() {
 
     let s1_token: Vec<&str> = tokenizer::word_token(&s1);
     let s2_token: Vec<&str> = tokenizer::word_token(&s2);
-    let (off.word_total, off.wordlen) = calculator::word_mean(&s1_token);
-    let (pseu.word_total, pseu.wordlen) = calculator::word_mean(&s2_token);
-    println!("Mean word length for file1: {}", off.wordlen);
-    println!("Mean word length for file2: {}", pseu.wordlen);
+    off.word_total = calculator::num_words(&s1_token);
+    pseu.word_total = calculator::num_words(&s2_token);
+    off.wordlen = calculator::word_mean(&s1_token);
+    pseu.wordlen = calculator::word_mean(&s2_token);
+    println!("Mean word length #1: {}", off.wordlen);
+    println!("Mean word length #2: {}", pseu.wordlen);
 
     let s1_sent: Vec<&str> = tokenizer::sent_token(&s1);
     let s2_sent: Vec<&str> = tokenizer::sent_token(&s2);
