@@ -1,8 +1,7 @@
 pub fn num_words(words: &Vec<&str>) -> f32 {
-    let mut num_words = 0;
-    for word in words {
-    	num_words += 1;
-    }
+    let mut num_words;
+    
+    num_words = words.len() as f32;
 
     return num_words as f32;
 }
@@ -25,11 +24,9 @@ pub fn word_mean(words: &Vec<&str>) -> f32 {
 
 pub fn sent_mean(word_total: &f32, sentences: &Vec<&str>) -> f32 {
 	let sent_mean: f32;
-	let mut sent_total = 0;
+	let mut sent_total;
 
-	for sentence in sentences {
-		sent_total += 1;
-	}
+	sent_total = sentences.len() as f32;
 
 	let total_sent = sent_total as f32;
 
