@@ -8,7 +8,7 @@ use std::default::Default;
 use std::char;
 
 mod tokenizer;      // Tokenizes files into words, sentences, and paragraphs.
-mod calculator;     // Does all the 
+mod calculator;     // Does all the calculations
 
 #[derive(Default, Copy, Clone)]
 struct Metadata {
@@ -65,6 +65,8 @@ fn main() {
     let s2_token: Vec<&str> = tokenizer::word_token(&s2);
     off.word_total = calculator::num_words(&s1_token);
     pseu.word_total = calculator::num_words(&s2_token);
+    println!("Word total #1: {}", off.word_total);
+    println!("Word total #2: {}", pseu.word_total);
     off.wordlen = calculator::word_mean(&s1_token);
     pseu.wordlen = calculator::word_mean(&s2_token);
     println!("Mean word length #1: {}", off.wordlen);
