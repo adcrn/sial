@@ -26,7 +26,7 @@ pub fn para_token(s: &String) -> Vec<&str> {
 }
 
 // Needs some thought.
-pub fn punctuation(s: &String) {
+/*pub fn punctuation(s: &String) {
 
 	let temp_punc: String =  s.chars()
 				.filter(|&x| !x.is_alphanumeric())
@@ -34,4 +34,4 @@ pub fn punctuation(s: &String) {
 				.collect();
 
 	
-}
+}*/

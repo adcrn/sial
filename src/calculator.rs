@@ -35,12 +35,12 @@ pub fn sent_mean(word_total: &f32, sentences: &Vec<&str>) -> f32 {
 	return sent_mean;
 }
 
-pub fn word_freq(words: &Vec<&str>) {
+pub fn word_freq(words: &Vec<&str>) -> (i32, i32, i32, i32, i32, i32, i32, i32, i32, i32) {
 	let mut num_and = 0;
 	let mut num_but = 0;
 	let mut num_however = 0;
 	let mut num_if = 0;
-	let mut num_what = 0;
+	let mut num_that = 0;
 	let mut num_more = 0;
 	let mut num_must = 0;
 	let mut num_might = 0;
@@ -49,17 +49,19 @@ pub fn word_freq(words: &Vec<&str>) {
 
 	for &word in words {
 		match word {
-		    "and" => num_and +=1,
-		    "but" => num_but +=1,
-		    "however" => num_however +=1,
-		    "if" => num_if +=1,
-		    "what" => num_what +=1,
-		    "more" => num_more +=1,
-		    "must" => num_must +=1,
-		    "might" => num_might +=1,
-		    "this" => num_this +=1,
-		    "very" => num_very +=1,
+		    "and" | "And" | "AND" => num_and +=1,
+		    "but" | "But" | "BUT" => num_but +=1,
+		    "however" | "However" | "HOWEVER" => num_however +=1,
+		    "if" | "If" | "IF" => num_if +=1,
+		    "that" | "That" | "THAT" => num_that +=1,
+		    "more" | "More" | "MORE" => num_more +=1,
+		    "must" | "Must" | "MUST" => num_must +=1,
+		    "might" | "Might" | "MIGHT" => num_might +=1,
+		    "this" | "This" | "THIS" => num_this +=1,
+		    "very" | "Very" | "VERY" => num_very +=1,
 		    _ => continue,
 		}
 	}
+
+	return (num_and, num_but, num_however, num_if, num_that, num_more, num_must, num_might, num_this, num_very);
 }
