@@ -101,19 +101,20 @@ fn main() {
 }
 
 fn print_data (st1: Metadata, st2: Metadata) {
-    println!("\t\t\t\tOfficial\t\tPseudonym");
-    println!("\t\t\t\t-----------------------------------------");
-    println!("Word total\t\t\t{}\t\t\t{}", st1.word_total, st2.word_total);
-    println!("Mean word length\t\t{}\t\t{}", st1.wordlen, st2.wordlen);
-    println!("Mean sentence length\t\t{}\t\t{}", st1.sentlen, st2.sentlen);
-    println!("Frequency of 'and'\t\t{}\t\t\t{}", st1.ands, st2.ands);
-    println!("Frequency of 'but'\t\t{}\t\t\t{}", st1.buts, st2.buts);
-    println!("Frequency of 'however'\t\t{}\t\t\t{}", st1.however, st2.however);
-    println!("Frequency of 'if'\t\t{}\t\t\t{}", st1.condition, st2.condition);
-    println!("Frequency of 'that'\t\t{}\t\t\t{}", st1.thats, st2.thats);
-    println!("Frequency of 'more'\t\t{}\t\t\t{}", st1.more, st2.more);
-    println!("Frequency of 'must'\t\t{}\t\t\t{}", st1.musts, st2.musts);
-    println!("Frequency of 'might'\t\t{}\t\t\t{}", st1.mights, st2.mights);
-    println!("Frequency of 'this'\t\t{}\t\t\t{}", st1.thises, st2.thises);
-    println!("Frequency of 'very'\t\t{}\t\t\t{}", st1.very, st2.very);
+    println!("{0: <30} {1: <20} {2: <10}", "", "Official", "Pseudonym");
+    println!("{0: <30} {1: <40}", "", "---------------------------------");
+    println!("{0: <30} {1: <20} {2:<10}", "Word total", st1.word_total, st2.word_total);
+    println!("{0: <30} {1: <20} {2:<10}", "Mean word length", st1.wordlen, st2.wordlen);
+    println!("{0: <30} {1: <20} {2:<10}", "Mean sentence length", st1.sentlen, st2.sentlen);
+    //println!("{0: <30} {1: <40}", "", "---------------------------------");
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'and'", st1.ands, st2.ands);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'but'", st1.buts, st2.buts);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'however'", st1.however, st2.however);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'if'", st1.condition, st2.condition);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'that'", st1.thats, st2.thats);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'more'", st1.more, st2.more);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'must'", st1.musts, st2.musts);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'might'", st1.mights, st2.mights);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'this'", st1.thises, st2.thises);
+    println!("{0: <30} {1: <20} {2:<10}", "Frequency of 'very'", st1.very, st2.very);
 }
